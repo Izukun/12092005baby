@@ -1,0 +1,163 @@
+    body {
+    overflow-y: hidden;
+    overflow-x: auto;
+    transition: all .8s;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    }
+
+    #background-image {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+
+.Heart {
+    position: relative;
+    left: 40%;
+    top: 20%;
+    width: 200px;
+    height: 180px;
+    background-color: red;
+    transform: rotate(-45deg);
+}
+
+.Heart::before,
+.Heart::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 180px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.Heart::before {
+    top: -100px;
+    left: 0;
+}
+
+.Heart::after {
+    top: 0;
+    left: 100px;
+}
+
+h2 {
+    position: absolute;
+    left: 39%;
+    top: 20%;
+    color: #ffffff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#buttonYes {
+    position: absolute;
+    width: 180px;
+    height: 100px;
+    left: 30%;
+    top: 60%;
+    background-color: #013763;
+    color:rgb(255, 255, 255);
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+#button {
+    position: absolute;
+    width: 180px;
+    height: 100px;
+    left: 50%;
+    top: 60%;
+    background-color: #013763;
+    color:rgb(255, 255, 255);
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.Yes {
+    position: absolute;
+    bottom: -25%;
+    color:rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+@media all and (max-width: 600px) {
+    
+    #background-image {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .Heart {
+        position: absolute;
+        top: 30%; /* Adjust to center the heart vertically */
+        left: 50%; /* Center the heart horizontally */
+        width: 40vmin; /* Use viewport units for a fluid size */
+        height: 36vmin;
+        background-color: red;
+        transform: translate(-50%, -50%) rotate(-45deg); /* Center and rotate in one step */
+    }
+    
+    .Heart::before,
+    .Heart::after {
+        content: '';
+        position: absolute;
+        width: 40vmin;
+        height: 36vmin;
+        background-color: red;
+        border-radius: 50%;
+    }
+
+    .Heart::before {
+        top: -20vmin; /* Adjust top relative to the new size */
+        left: 0;
+    }
+
+    .Heart::after {
+        top: 0;
+        left: 20vmin; /* Adjust left relative to the new size */
+    }
+
+    h2 {
+        font-size: 1.5rem; /* Use a relative font size */
+        top: 15%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%; /* Ensure the text fits on the screen */
+        text-align: center;
+    }
+
+    #buttonYes, #button {
+        position: absolute;
+        width: 40%;
+        height: 80px;
+        top: 70%;
+        transform: translateX(-50%);
+        font-size: 1rem;
+    }
+
+    #buttonYes {
+        left: 30%;
+    }
+
+    #button {
+        left: 75%;
+    }
+
+    .Yes {
+        bottom: 1%;
+        font-size: 20px;
+    }
+}
